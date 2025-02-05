@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="./sth.js">
+<head>
+<style>
+.typing-text {
+  white-space: nowrap; /* Prevent wrapping of text */
+  overflow: hidden; /* Hide overflowing text */
+}
+
+.typing-text span {
+  animation: typing 2s steps(30), blink 0.5s infinite; 
+}
+
+@keyframes typing {
+  from { width: 0; } 
+  to { width: 100%; } 
+}
+
+@keyframes blink {
+  50% { border-color: transparent; } 
+}
+</style>
+</head>
+<body>
+
+<div class="typing-text">
+  <span>Hello, world!jhgtfcdxfgchjjygutdfghjhyiukj</span>
+</div>
+
+</body>
+
+<script>
+    const typingText = document.querySelector('.typing-text');
+    const typingSpan = typingText.querySelector('span');
+
+    typingText.addEventListener('mouseenter', () => {
+    typingSpan.classList.remove('typing', 'blink');
+    setTimeout(() => {
+    typingSpan.classList.add('typing', 'blink');
+  }, 100); // Delay before restarting animation
+});
+</script>
+</html>
